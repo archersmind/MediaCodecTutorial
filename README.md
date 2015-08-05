@@ -25,4 +25,3 @@ You can found more informaion about the build tool [here](https://developer.andr
 
 Run this testing application is as simple as launch the `apk`, then the decoded frames will be rendered to the screen.
 
-
