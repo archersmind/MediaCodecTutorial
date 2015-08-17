@@ -49,6 +49,20 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback {
         setContentView(view);
     }
 
+    @Override
+    protected void onPause() {
+        Log.i(LOG_TAG, "onPause...");
+        mDecodingDone = true;
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        Log.i(LOG_TAG, "onStop...");
+        mDecodingDone = true;
+        super.onStop();
+    }
+
     protected void onDestroy() {
         super.onDestroy();
     }
@@ -183,6 +197,7 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback {
             }
         }
 
+        Log.i(LOG_TAG, "releasing codec...");
         mCodec.stop();
         mCodec.release();
         mExtractor.release();
